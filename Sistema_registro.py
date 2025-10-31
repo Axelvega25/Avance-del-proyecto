@@ -38,6 +38,28 @@ elif opcion == 3:
     cont_padel += 1
     ingresos_padel += pago
     deportes = "Padel"
+elif opcion == 4:
+        pago = 3000
+        deportes = "Alberca, Tenis y Padel"
+    else:
+        print("Opcion no valida, inteta de nuevo. \n")
+    continue
+
+cont_personas += 1
+ingreso_total += pago
+suma_pagos += pago
+resumen_clientes += "Nombre: " + nombre + " | Deportes: " + deportes + " | Pago: $" + str(pago) + "\n"
+
+print()
+print("REPORTE FINAL - CLUB BRITANIA")
+print("\n")
+print("Total de socios registrados:", cont_personas)
+print("\nresumen de clientes:\n")
+
+
+
+
+
 
 
 
