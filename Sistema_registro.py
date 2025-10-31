@@ -17,13 +17,28 @@ while cont_personas < num_personas:
     if nombre == "cancelar" or nombre == "Cancelar":
         print("Registro cancelado.\n")
         break
-
     print("Que deporte realiza?")
     print("1. Alberca")
     print("2. Tenis")
     print("3. Padel")
     print("4. Mas de un deporte (Membresia completa)")
     opcion = int(input("Elige una opcion (1-4): "))
+if opcion == 1:
+    pago = 1800
+    alberca_clientes += 1
+    ingreso_alberca += pago
+    deportes = "Alberca"
+elif opcion == 2:
+    pago = 2350
+    tenis_clientes += 1
+    ingreso_tenis += pago
+    deportes = "Tenis"
+elif opcion == 3:
+    pago = 2400
+    padel_clientes += 1
+    ingreso_padel += pago
+    deportes = "Padel"
+
 
 
 
