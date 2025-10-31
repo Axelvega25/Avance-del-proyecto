@@ -25,19 +25,20 @@ while cont_personas < num_personas:
     opcion = int(input("Elige una opcion (1-4): "))
 if opcion == 1:
     pago = 1800
-    alberca_clientes += 1
-    ingreso_alberca += pago
+    cont_alberca += 1
+    ingresos_alberca += pago
     deportes = "Alberca"
 elif opcion == 2:
     pago = 2350
-    tenis_clientes += 1
-    ingreso_tenis += pago
+    cont_tenis += 1
+    ingresos_tenis += pago
     deportes = "Tenis"
 elif opcion == 3:
     pago = 2400
-    padel_clientes += 1
-    ingreso_padel += pago
+    cont_padel += 1
+    ingresos_padel += pago
     deportes = "Padel"
+
 
 
 
