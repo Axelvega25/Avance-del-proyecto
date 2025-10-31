@@ -1,0 +1,1 @@
+num_personas=int(input("Cuantas"))

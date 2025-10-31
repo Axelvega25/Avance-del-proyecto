@@ -1,5 +1,6 @@
-# Avance-del-proyecto
+Avance-del-proyecto
 #Sistema de registro Club Britania Chihuahua 
 #entradas iniciales 
-num_persona
+
+num_persona = int
 
