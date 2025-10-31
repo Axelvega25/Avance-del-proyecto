@@ -56,6 +56,22 @@ print("\n")
 print("Total de socios registrados:", cont_personas)
 print("\nresumen de clientes:\n")
 
+print("\nResumen de clientes:\n")
+print(resumen_clientes)
+
+print()
+print("Total por deporte:")
+print("Alberca:", cont_alberca, "personas | Ingreso: $", ingresos_alberca)
+print("Tenis:", cont_tenis, "personas | Ingreso: $", ingresos_tenis)
+print("Padel:", cont_padel, "personas | Ingreso: $", ingresos_padel)
+
+print()
+print("Ganancia total: $", ingreso_total)
+
+if cont_personas > 0:
+    print("Promedio de ganancia por persona: $", ingreso_total / cont_personas)
+
+print("\nRegistro finalizado con éxito.")
 
 
 
