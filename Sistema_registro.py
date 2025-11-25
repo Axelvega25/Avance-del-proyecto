@@ -24,7 +24,27 @@ while cont_personas < num_personas:
     print("4. Mas de un deporte (Membresia completa)")
     opcion = int(input("Elige una opcion (1-4): "))
 
-    
+    if opcion == 1:
+        pago = 1800
+        cont_alberca += 1
+        ingresos_alberca += pago
+        deportes = "Alberca"
+    elif opcion == 2:
+        pago = 2350
+        cont_tenis += 1
+        ingresos_tenis += pago
+        deportes = "Tenis"
+    elif opcion == 3:
+        pago = 2400
+        cont_padel += 1
+        ingresos_padel += pago
+        deportes = "Padel"
+    elif opcion == 4:
+        pago = 3000
+        deportes = "Alberca, Tenis y Padel"
+    else:
+        print("Opcion no valida, inteta de nuevo. \n")
+        continue
 
     cont_personas += 1
     ingreso_total += pago
