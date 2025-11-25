@@ -43,7 +43,7 @@ def mostrar_carga():
 
 mostrar_carga()
 
-# Función: guardar los cliente en los archivos
+# Función: guardar cliente en archivo
 
 def guardar_en_archivo(cliente):
     try:
@@ -54,39 +54,29 @@ def guardar_en_archivo(cliente):
     except:
         print("Error al guardar en archivo.")
 
-#Funcion: Registrar cliente
 
-def registrar_cliente (estadisticas,clientes):
-    nombre = input ("Nombre del socio (o escribe cancelar ):")
+# Función: registrar cliente
+
+def registrar_cliente(estadisticas, clientes):
+    nombre = input("Nombre del socio (o escribe cancelar): ")
 
     if nombre.lower() == "cancelar" or "Cancelar":
         print("Registro cancelado.\n")
         return None
-    
-    print("¿Que deporte realiza?")
-        return None
-    
-    print("¿Que deporte realiza?")
+
+    print("¿Qué deporte realiza?")
     print("1. Alberca")
     print("2. Tenis")
     print("3. Padel")
-    print("4. Mas de un deporte (Membresia completa)")
+    print("4. Más de un deporte (Membresía completa)")
 
     try:
-        opcion = int(input("Elige una opcion (1-4): "))
+        opcion = int(input("Elige una opción (1-4): "))
     except:
-        print("Error: debes de ingresar un numero.\n")
+        print("Error: debes ingresar un número.\n")
         return None
-    
 
-    try:
-        opcion = int(input("Elige una opcion (1-4): "))
-    except:
-        print("Error: debes de ingresar un numero.\n")
-        return None
-    
     if opcion == 1:
-        deporte = "Alberca"
         deporte = "Alberca"
         pago = 1800
         estadisticas["cont_alberca"] += 1
@@ -108,12 +98,55 @@ def registrar_cliente (estadisticas,clientes):
         deporte = "Alberca, Tenis y Padel"
         pago = 3000
 
-        #Cuenta una persona en cada deporte
+        # Cuenta una persona en cada deporte
         estadisticas["cont_alberca"] += 1
         estadisticas["cont_tenis"] += 1
         estadisticas["cont_padel"] += 1
 
-        #Repartimos el pago de membresía completa entre los 3 deportes
+        # Repartimos el pago de memberesia completa entre los 3 deportes
         estadisticas["ingreso_alberca"] += 1000
         estadisticas["ingreso_tenis"] += 1000
         estadisticas["ingreso_padel"] += 1000
+
+    else:
+        print("Opción no válida.\n")
+        return None
+
+    cliente = {
+        "nombre": nombre,
+        "deporte": deporte,
+        "pago": pago
+    }
+
+    clientes.append(cliente)
+    estadisticas["ingreso_total"] += pago
+    guardar_en_archivo(cliente)
+
+    print("Registro exitoso.\n")
+    return cliente
+
+# Función: mostrar reporte
+
+def mostrar_reporte(estadisticas, clientes):
+    print()
+    print("        Reporte final - Club britania    ")
+    print()
+
+    print("Total de socios registrados:", len(clientes))
+    print("\nResumen de clientes:\n")
+
+    for c in clientes:
+        print("Nombre:", c["nombre"], "| Deporte:", c["deporte"], "| Pago: $", c["pago"])
+
+    print("\nTotal por deporte:")
+    print("Alberca:", estadisticas["cont_alberca"], "personas | Ingreso: $", estadisticas["ingreso_alberca"])
+    print("Tenis:", estadisticas["cont_tenis"], "personas | Ingreso: $", estadisticas["ingreso_tenis"])
+    print("Padel:", estadisticas["cont_padel"], "personas | Ingreso: $", estadisticas["ingreso_padel"])
+
+    print("\nGanancia total: $", estadisticas["ingreso_total"])
+
+    if len(clientes) > 0:
+        print("Promedio por persona: $", estadisticas["ingreso_total"] / len(clientes))
+
+    print("\nLos datos también fueron guardados correctamente")
+    print()
