@@ -22,3 +22,30 @@ def guardar_en_archivo(cliente):
                           " | Pago: $" + str(cliente["pago"]) + "\n")
     except:
         print("Error al guardar en archivo.")
+
+#Funcion: Registrar cliente
+
+def registrar_cliente (estadisticas,clientes):
+    nombre = input ("Nombre del socio (o escribe cancelar ):")
+
+    if nombre.lower() == "cancelar" or "Cancelar":
+        print("Registro cancelado.\n")
+        return None
+    
+    print("¿Que deporte realiza?")
+    print("1. Alberca")
+    print("2. Tenis")
+    print("3. Padel")
+    print("4. Mas de un deporte (Membresia completa)")
+
+    try:
+        opcion = int(input("Elige una opcion (1-4): "))
+    except:
+        print("Error: debes de ingresar un numero.\n")
+        return None
+    
+    if opcion == 1:
+        deporte = "Alberca"
+        pago = 1800
+        estadisticas["cont_alberca"] += 1
+        estadisticas["ingreso_alberca"] += pago
