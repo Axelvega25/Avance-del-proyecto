@@ -1,5 +1,3 @@
-#   SISTEMA DE REGISTRO - CLUB BRITANIA
-
 import time
 
 def mostrar_carga():
@@ -29,7 +27,7 @@ def guardar_en_archivo(cliente):
 def registrar_cliente(estadisticas, clientes):
     nombre = input("Nombre del socio (o escribe cancelar): ")
 
-    if nombre.lower() == "cancelar" or "Cancelar":
+    if nombre.lower() == "cancelar":
         print("Registro cancelado.\n")
         return None
 
@@ -117,7 +115,7 @@ def mostrar_reporte(estadisticas, clientes):
     if len(clientes) > 0:
         print("Promedio por persona: $", estadisticas["ingreso_total"] / len(clientes))
 
-    print("\nLos datos también fueron guardados correctamente")
+    print("\nLos datos fueron guardados correctamente")
     print()
 
 # Menu con funcion while
@@ -155,6 +153,7 @@ while True:
 
     else:
         print("Opción incorrecta. Intenta de nuevo.\n")
+
 
 
 
