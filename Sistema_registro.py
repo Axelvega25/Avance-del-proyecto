@@ -4,40 +4,9 @@ import time
 
 def mostrar_carga():
     print("CARGANDO PROGRAMA")
-    for i in range(10): #Esta linea de codigo indica cuantas veces se va a imprimir "."
-        print(".", end="", flush=True) #El print "." puede ser modificado, por ejemplo le puedes poner "-" y se va a imprimir una linea horizontal del mismo
-        time.sleep(0.3) #Esta funcion es cuando el programa se va a apagar y encender
-    print(" Listo!\n")
-
-
-mostrar_carga()
-
-# Función: guardar los cliente en los archivos
-
-def guardar_en_archivo(cliente):
-    try:
-        with open("registro_britania.txt", "a") as archivo:
-            archivo.write("Nombre: " + cliente["nombre"] +
-                          " | Deporte: " + cliente["deporte"] +
-                          " | Pago: $" + str(cliente["pago"]) + "\n")
-    except:
-        print("Error al guardar en archivo.")
-
-#Funcion: Registrar cliente
-
-def registrar_cliente (estadisticas,clientes):
-    nombre = input ("Nombre del socio (o escribe cancelar ):")
-
-    if nombre.lower() == "cancelar" or "Cancelar":
-#   SISTEMA DE REGISTRO - CLUB BRITANIA
-
-import time
-
-def mostrar_carga():
-    print("CARGANDO PROGRAMA")
-    for i in range(10): #Esta linea de codigo indica cuantas veces se va a imprimir "."
-        print(".", end="", flush=True) #El print "." puede ser modificado, por ejemplo le puedes poner "-" y se va a imprimir una linea horizontal del mismo
-        time.sleep(0.3) #Esta funcion es cuando el programa se va a apagar y encender
+    for i in range(10):
+        print(".", end="", flush=True)
+        time.sleep(0.3)
     print(" Listo!\n")
 
 
@@ -128,9 +97,9 @@ def registrar_cliente(estadisticas, clientes):
 # Función: mostrar reporte
 
 def mostrar_reporte(estadisticas, clientes):
-    print()
+    print("\n====================================")
     print("        Reporte final - Club britania    ")
-    print()
+    print("====================================\n")
 
     print("Total de socios registrados:", len(clientes))
     print("\nResumen de clientes:\n")
@@ -150,7 +119,7 @@ def mostrar_reporte(estadisticas, clientes):
 
     print("\nLos datos también fueron guardados correctamente")
     print()
-    
+
 # Menu con funcion while
 
 clientes = []
@@ -166,11 +135,11 @@ estadisticas = {
 }
 
 while True:
-    print("========= MENÚ PRINCIPAL =========")
+    print("========== MENÚ PRINCIPAL ==========")
     print("1. Registrar socio")
     print("2. Ver reporte")
     print("3. Salir")
-    print("===================================")
+    print("====================================")
 
     opcion = input("Selecciona una opción (1-3): ")
 
@@ -186,6 +155,10 @@ while True:
 
     else:
         print("Opción incorrecta. Intenta de nuevo.\n")
+
+
+
+
 
 
 
