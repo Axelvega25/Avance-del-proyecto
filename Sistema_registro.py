@@ -150,3 +150,51 @@ def mostrar_reporte(estadisticas, clientes):
 
     print("\nLos datos también fueron guardados correctamente")
     print()
+    
+# Menu con funcion while
+
+clientes = []
+
+estadisticas = {
+    "cont_alberca": 0,
+    "cont_tenis": 0,
+    "cont_padel": 0,
+    "ingreso_alberca": 0,
+    "ingreso_tenis": 0,
+    "ingreso_padel": 0,
+    "ingreso_total": 0
+}
+
+while True:
+    print("========= MENÚ PRINCIPAL =========")
+    print("1. Registrar socio")
+    print("2. Ver reporte")
+    print("3. Salir")
+    print("===================================")
+
+    opcion = input("Selecciona una opción (1-3): ")
+
+    if opcion == "1":
+        registrar_cliente(estadisticas, clientes)
+
+    elif opcion == "2":
+        mostrar_reporte(estadisticas, clientes)
+
+    elif opcion == "3":
+        print("Saliendo del sistema... ¡Gracias por usarlo!")
+        break
+
+    else:
+        print("Opción incorrecta. Intenta de nuevo.\n")
+
+
+
+
+
+
+
+
+
+
+
+
