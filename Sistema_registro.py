@@ -27,8 +27,12 @@ def guardar_en_archivo(cliente):
 def registrar_cliente(estadisticas, clientes):
     nombre = input("Nombre del socio (o escribe cancelar): ")
 
+    if nombre.strip() == "":
+        print("Error: el nombre no puede estar vacio.\n")
+        return None
+        
     if nombre.lower() == "cancelar":
-        print("Registro cancelado.\n")
+        print("Registro ha sido cancelado con exito.\n")
         return None
 
     print("¿Qué deporte realiza?")
@@ -153,6 +157,7 @@ while True:
 
     else:
         print("Opción incorrecta. Intenta de nuevo.\n")
+
 
 
 
