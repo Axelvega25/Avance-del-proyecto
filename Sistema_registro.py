@@ -3,9 +3,9 @@ import time
 def mostrar_carga():
     print()
     print("Cargando programa\n")
-    for i in range(30):
+    for i in range(10):
         print(".", end="", flush=True)
-        time.sleep(0.2)
+        time.sleep(0.3)
     print(" Listo!\n")
 
 mostrar_carga()
@@ -154,6 +154,7 @@ while True:
 
     else:
         print("Opción incorrecta. Intenta de nuevo.\n")
+
 
 
 
