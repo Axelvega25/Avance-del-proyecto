@@ -5,7 +5,7 @@ def mostrar_carga():
     print("Cargando programa\n")
     for i in range(10):
         print(".", end="", flush=True)
-        time.sleep(0.3)
+        time.sleep(0.5)
     print(" Listo!\n")
 
 mostrar_carga()
@@ -16,7 +16,8 @@ def guardar_en_archivo(cliente):
         with open("registro_britania.txt", "a") as archivo:
             archivo.write("Nombre: " + cliente["nombre"] +
                           " | Deporte: " + cliente["deporte"] +
-                          " | Pago: $" + str(cliente["pago"]) + "\n")
+                          " | Pago: $" + str(cliente["pago"]) +
+                          " | Fecha: " + str(cliente["fecha"]) + "\n")
     except:
         print("Error al guardar en archivo.")
 
@@ -29,7 +30,7 @@ def registrar_cliente(estadisticas, clientes):
         print("Error: el nombre no puede estar vacío.\n")
         return None
 
-    # Cancelar finaliza todo el programa 
+    # Cancelar termina todo el programa
     if nombre.lower() == "cancelar":
         print("\nRegistro cancelado por el usuario.")
         print("Saliendo del sistema... ¡Hasta luego!\n")
@@ -63,7 +64,7 @@ def registrar_cliente(estadisticas, clientes):
         deporte = "Padel"
         pago = 2400
         estadisticas["cont_padel"] += 1
-        estadisticas["ngreso_padel"] += pago
+        estadisticas["ingreso_padel"] += pago
 
     elif opcion == 4:
         deporte = "Alberca, Tenis y Padel"
@@ -81,10 +82,15 @@ def registrar_cliente(estadisticas, clientes):
         print("Opción no válida.\n")
         return None
 
+    # FECHA EN TUPLA
+    fecha_actual = time.localtime()
+    fecha = (fecha_actual.tm_mday, fecha_actual.tm_mon, fecha_actual.tm_year)
+
     cliente = {
         "nombre": nombre,
         "deporte": deporte,
-        "pago": pago
+        "pago": pago,
+        "fecha": fecha
     }
 
     clientes.append(cliente)
@@ -104,12 +110,15 @@ def mostrar_reporte(estadisticas, clientes):
     print("\nResumen de clientes:\n")
 
     for datos in clientes:
-        print("Nombre:", datos["nombre"], "| Deporte:", datos["deporte"], "| Pago: $", datos["pago"])
+        print("Nombre:", datos["nombre"],
+              "| Deporte:", datos["deporte"],
+              "| Pago: $", datos["pago"],
+              "| Fecha:", datos["fecha"])
 
     print("\nTotal por deporte:")
     print("Alberca:", estadisticas["cont_alberca"], "personas | Ingreso: $", estadisticas["ingreso_alberca"])
     print("Tenis:", estadisticas["cont_tenis"], "personas | Ingreso: $", estadisticas["ingreso_tenis"])
-    print("Padel:", estadisticas["cont_padel"], "personas | Ingreso: $", estadisticas["ingreso_padel"])
+    print("Pádel:", estadisticas["cont_padel"], "personas | Ingreso: $", estadisticas["ingreso_padel"])
 
     print("\nGanancia total: $", estadisticas["ingreso_total"])
 
@@ -154,6 +163,7 @@ while True:
 
     else:
         print("Opción incorrecta. Intenta de nuevo.\n")
+
 
 
 
