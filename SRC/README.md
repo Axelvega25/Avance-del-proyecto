@@ -18,27 +18,19 @@ En este sistema va a permitir registrar socios, validar sus datos, asignarles un
 
 1. Descarga el archivo del programa (el que te proporcionaron o el que tengas guardado en tu computadora).
 
-2. Asegúrate de tener Python 3.8 o superior instalado.
+2. Asegúrate de tener Python 3.10 o superior instalado.
 
 3. Guarda el archivo del sistema en una carpeta donde tengas permisos de lectura y escritura.
-
-4. No necesitas instalar librerías externas; el programa funciona solo con herramientas básicas de Python.
 
 ----- Ejecución
 
 1. Abre la carpeta donde guardaste el archivo.
 
-2. Da doble clic si tu sistema lo permite, o bien:
+  Ejecuta el programa 
 
-Abre una terminal o consola.
+1. El sistema iniciará pidiendo cuántos socios deseas registrar.
 
-Escribe:
-
-python nombre_del_archivo.py
-
-3. El sistema iniciará pidiendo cuántos socios deseas registrar.
-
-4. Sigue las instrucciones en pantalla:
+2. Sigue las instrucciones en pantalla:
 
 El flujo del funcionamiento del codigo
 
